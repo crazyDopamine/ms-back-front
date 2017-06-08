@@ -1,0 +1,11 @@
+$minWidth:1200px;
+$minHeight:600px;
+.main{
+    background-color: $silvery;
+    min-height:$minHeight;
+    min-width:$minWidth;
+    float:left;
+    .main-content{
+        background-color: $white;
+    }
+}

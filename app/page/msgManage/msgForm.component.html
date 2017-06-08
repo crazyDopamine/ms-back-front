@@ -1,0 +1,38 @@
+<div class="main">
+    <div class="main-content">
+        <div class="content-bar">
+            <a class="btn" (click)="location.back()">返回</a>
+        </div>
+        <div class="form-area">
+            <div class="form-row">
+                <div class="col-8">
+                    <md-input-container>
+                        <input mdInput type="text" placeholder="标题" [(ngModel)]="data.title">
+                    </md-input-container>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-8">
+                    <md-select placeholder="类型" [(ngModel)]="data.type">
+                        <md-option *ngFor="let type of types" [value]="type.id">
+                            {{type.name}}
+                        </md-option>
+                    </md-select>
+                </div>
+            </div>
+            <!--<div class="form-row">-->
+                <!--<div class="col-8">-->
+                    <!--<md-input-container>-->
+                        <!--<textarea mdInput placeholder="文本" [(ngModel)]="data.content" rows="4"></textarea>-->
+                    <!--</md-input-container>-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class="form-row">
+                <div [froalaEditor]="editorOptions" [(froalaModel)]="data.content" class="default-editor"></div>
+            </div>
+            <div class="btn-area">
+                <a class="btn" (click)="submit()">保存</a>
+            </div>
+        </div>
+    </div>
+</div>

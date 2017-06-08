@@ -1,0 +1,31 @@
+$tdHeight:30px;
+$thHeight:40px;
+$thPaddingX:10px;
+$thPaddingY:10px;
+$tdPaddingX:10px;
+$tdPaddingY:10px;
+$tableBorderHeight:1px;
+$pageSize:10;
+
+.table-area{
+  min-height:$thHeight + $tdHeight * $pageSize;
+}
+table.default{
+  width:100%;
+  border-collapse:collapse;
+  font-size:14px;
+  thead{
+    th{
+      line-height:$thHeight - 2 * $tableBorderHeight;
+      text-align:left;
+      padding:$thPaddingY $thPaddingX;
+    }
+  }
+  tbody{
+    td{
+      line-height:$tdHeight - 2 * $tableBorderHeight;
+      text-align:left;
+      padding:$tdPaddingY $tdPaddingX;
+    }
+  }
+}

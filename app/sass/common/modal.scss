@@ -1,0 +1,71 @@
+$modalZIndex:$zIndex-modal;
+$modalDefaultWidth:400px;
+$modalDefaultFooterHeight:40px;
+$modalDefaultTop:100px;
+$modalDefaultBg:$white;
+
+$modalLargeWidth:800px;
+
+$modalBodyMinHeight:100px;
+$modalPaddingY:20px;
+$modalPaddingX:20px;
+$modalHeaderHeight:40px;
+$modalBorder:$commonBorder;
+
+
+.modal{
+  position:fixed;
+  z-index:$modalZIndex;
+  top:0;
+  left:50%;
+  margin-left:- $modalDefaultWidth / 2;
+  top:$modalDefaultTop;
+  width:$modalDefaultWidth;
+  background-color:$modalDefaultBg;
+  .modal-header{
+    padding:0 $modalPaddingX;
+    line-height:$modalHeaderHeight - 1;
+    border-bottom:1px solid $modalBorder;
+  }
+  .modal-body{
+    padding:$modalPaddingY $modalPaddingX;
+    min-height:$modalBodyMinHeight;
+  }
+  .modal-footer{
+    padding:5px $modalPaddingX;
+    text-align:right;
+    border-top:1px solid $modalBorder;
+    >a{
+      line-height:$modalDefaultFooterHeight - 1;
+    }
+  }
+}
+
+.modal-mask {
+  position:fixed;
+  background-color:rgba(0, 0, 0, 0.5);
+  width:100%;
+  height:100%;
+  z-index:$modalZIndex;
+  top:0;
+  left:0;
+}
+
+.modal{
+  .form-area{
+    .form-row{
+      padding-left:0;
+      >input{
+        width:100%;
+      }
+      >textarea{
+        width:100%;
+      }
+    }
+  }
+}
+
+.modal.large{
+  margin-left:- $modalLargeWidth / 2;
+  width:$modalLargeWidth;
+}

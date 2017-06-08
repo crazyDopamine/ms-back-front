@@ -1,0 +1,11 @@
+<div class="st-pagination" *ngIf="total>1">
+    <a class="first-page" (click)="next(1)" [class]="current!=1?'':'disabled'">首页</a>
+    <a class="previous-page" (click)="next(current-1)" [class]="current>1?'':'disabled'">上一页</a>
+    <span *ngIf="current>5">...</span>
+    <template ngFor let-item [ngForOf]="list" let-i="index">
+        <a [class]="current==item?'active':''" (click)="next(item)" *ngIf="item>current-5&&item<current+5">{{item}}</a>
+    </template>
+    <span *ngIf="total-current>5">...</span>
+    <a class="next-page" (click)="next(current+1)" [class]="current<total?'':'disabled'">下一页</a>
+    <a class="last-page" (click)="next(total)" [class]="current!=total?'':'disabled'">尾页</a>
+</div>

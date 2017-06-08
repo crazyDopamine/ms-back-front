@@ -1,0 +1,19 @@
+.my-skill-items{
+    .skill-item{
+        position:relative;
+        background-color:$silvery;
+        border:1px solid $commonBorder;
+        border-radius:4px;
+        height:100px;
+        width:200px;
+        margin:10px;
+        padding:10px;
+        float:left;
+        overflow:hidden;
+        .learn-progress{
+            position:absolute;
+            bottom:0;
+            left: 0;
+        }
+    }
+}

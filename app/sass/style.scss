@@ -1,0 +1,22 @@
+
+@charset "utf-8";
+@import "./common/variables";
+@import "./common/reset";
+@import "./common/basic";
+@import "./common/table";
+@import "./common/form";
+@import "./common/btn";
+@import "./common/modal";
+@import "./common/widget/mainNav";
+@import "./common/layout";
+@import "./common/img";
+////widget
+@import "./common/widget/header";
+@import "./common/widget/STPagination";
+
+//pages
+@import "./page/mySkill";
+
+body{
+  background:$white;
+}

@@ -1,0 +1,11 @@
+@charset "utf-8";
+@import "./common/reset";
+@import "./common/variables";
+@import "./common/basic";
+@import "./common/layout";
+@import "./common/widget/header";
+@import "./common/widget/mainNav";
+
+body{
+  background:$white;
+}

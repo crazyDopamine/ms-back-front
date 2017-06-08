@@ -1,0 +1,141 @@
+$formRowMinHeight:30px;
+$formRowMarginX:20px;
+$labelColor:$black;
+$formFontSize:$fontSize-m;
+
+$inputPaddingY:0;
+$inputPaddingX:10px;
+$inputPlaceholderHeight:20px;
+$inputHeight:40px;
+$inputBorderColor:$commonBorder;
+
+$formLeftWidth:10%;
+$formRightWidth:30%;
+$formPaddingX:10px;
+
+.form-area{
+  font-size:$formFontSize;
+  .form-row{
+    min-height:$formRowMinHeight;
+    margin-bottom:$formRowMarginX;
+    &:last-child{
+      margin-bottom:0;
+    }
+    display:block;
+    &:after {
+      content:'';
+      display:block;
+      height:0;
+      clear:both;
+      visibility:hidden;
+    }
+    >label{
+      display:inline-block;
+      float:left;
+      width:$formLeftWidth;
+      min-width:100px;
+      text-align:right;
+      line-height:$formRowMinHeight;
+      color:$labelColor;
+      font-weight:normal;
+      padding-right:$formPaddingX;
+    }
+    //>input{
+    //  line-height:$formRowMinHeight - 2;
+    //  width:$formRightWidth;
+    //}
+    .st-select{
+      line-height:$formRowMinHeight - 2;
+      width:$formRightWidth;
+      input{
+        line-height:$formRowMinHeight - 2;
+      }
+    }
+    >textarea{
+      float:left;
+      width:$formRightWidth;
+    }
+  }
+  .btn-area{
+    padding-left:$formLeftWidth;
+  }
+  .form-list{
+    position:relative;
+    .list-bar{
+      padding-left:10%;
+      width:$formLeftWidth + $formRightWidth;
+      text-align:right;
+      a{
+      }
+    }
+    ul{
+      position:relative;
+      .btn-add{
+        float:right;
+      }
+      li{
+        position:relative;
+        line-height:$formRowMinHeight;
+        width:$formLeftWidth + $formRightWidth;
+        &:hover{
+          background-color:$whiteHover;
+        }
+        .index{
+          display:inline-block;
+          width:$formLeftWidth / ($formLeftWidth + $formRightWidth) * 100%;
+          min-width:100px;
+          text-align:right;
+          line-height:$formRowMinHeight;
+          color:$labelColor;
+          font-weight:normal;
+          padding-right:$formPaddingX;
+        }
+        .operation{
+          float:right;
+        }
+      }
+    }
+  }
+}
+
+//
+//input[type='text'],input[type='number'],input[type='password']{
+//  padding:$input-padding-y $input-padding-x;
+//  border: 1px $input-border-color solid;
+//  border-radius:2px;
+//}
+
+textarea{
+  padding:$inputPaddingY $inputPaddingX;
+  border: 1px $inputBorderColor solid;
+  border-radius:2px;
+}
+
+.mat-input-placeholder-wrapper{
+  height:34px;
+}
+.mat-input-element{
+  padding:$inputPaddingY $inputPaddingX;
+}
+.mat-input-container{
+  .mat-input-wrapper{
+    margin:0;
+  }
+}
+.mat-input-container{
+  width:100%;
+}
+.mat-input-underline{
+  left: 0;
+  bottom: 0;
+}
+.mat-select{
+  width:100%;
+  .mat-select-trigger{
+    height:auto;
+  }
+}
+
+.default-editor .fr-wrapper{
+  min-height:200px;
+}

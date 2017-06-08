@@ -1,0 +1,39 @@
+<div class="main">
+    <!--<img src="dist/img/img-aboutus.png">-->
+    <div class="main-content">
+        <div class="table-bar content-item">
+            <a class="btn" (click)="onLoaded()">
+                刷新
+            </a>
+            <a class="btn" routerLink="/msgForm/">
+                添加
+            </a>
+        </div>
+        <div class="table-area content-item">
+            <table class="default">
+                <thead>
+                <tr>
+                    <th>标题</th>
+                    <th>类型</th>
+                    <th>更新时间</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let data of table.dataList">
+                    <td>{{data.title}}</td>
+                    <td>{{data.type | selection:'1'}}</td>
+                    <td>{{data.updated_at | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+                    <td>
+                        <a [routerLink]="'/msgForm/'+data.id">修改</a>
+                        <a (click)="table.remove(data.id)">删除</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="content-item">
+            <st-pagination [total]="table.pages" [current]="table.page" (change)="table.refresh($event)"></st-pagination>
+        </div>
+    </div>
+</div>

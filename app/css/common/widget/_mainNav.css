@@ -1,0 +1,21 @@
+$mainNavWidth:200px;
+$mainNavPaddingX:20px;
+$mainNavMinHeight:600px;
+
+.main-nav{
+    width:$mainNavWidth;
+    background-color: $gray;
+    padding:0 $mainNavPaddingX;
+    float:left;
+    min-height:$mainNavMinHeight;
+    .nav-group{
+        text-align: left;
+    }
+    .nav-item{
+        text-align: left;
+        padding-left:$mainNavPaddingX;
+    }
+    .btn{
+        color:$white;
+    }
+}

@@ -1,0 +1,62 @@
+$pageMinWidth:1400px;
+$mainMinWidth:1200px;
+$mainMinHeight:600px;
+$mainMarginX:20px;
+$mainMarginY:20px;
+$mainPaddingX:20px;
+$mainPaddingY:20px;
+.main{
+  background-color: $silvery;
+  min-height:$mainMinHeight;
+  min-width:$mainMinWidth;
+  padding:$mainPaddingY $mainPaddingX;
+  .main-content{
+    background-color: $white;
+    min-height:$mainMinHeight - 40;
+  }
+}
+
+.flex{
+  display:flex;
+}
+
+.main-body{
+  display:flex;
+  margin-top: 80px;
+  min-width:$pageMinWidth;
+  align-items:stretch;
+  .body-left{
+    display:flex;
+    flex-grow:0;
+    >*{
+      display:flex;
+      align-items:stretch;
+    }
+  }
+  .body-content{
+    flex-grow:1;
+    >*{
+      display:flex;
+      align-items:stretch;
+    }
+  }
+}
+
+.main{
+  flex-grow:1;
+  .main-content{
+    flex-grow:1;
+    padding:$mainPaddingY $mainPaddingX;
+    .content-bar{
+      margin-bottom:$mainMarginX;
+    }
+    .content-item:not(:last-child){
+      margin-bottom:$mainMarginX;
+    }
+  }
+}
+
+
+.modal-body{
+  min-height:100px;
+}

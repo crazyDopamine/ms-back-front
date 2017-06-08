@@ -1,0 +1,36 @@
+$mainNavMinWidth:$one*40;
+$mainNavPaddingX:$one*4;
+$mainNavPaddingY:$one*4;
+$mainNavMinHeight:600px;
+$mainNavBg:$themeColor;
+//$mainNavBgHL:$themeColorL;
+$mainNavBorder:$gray;
+$mainNavColor:$silvery;
+$mainNavColorHL:$silvery;
+
+.main-nav {
+  min-width:$mainNavMinWidth;
+  background-color:$mainNavBg;
+  //padding:$mainNavPaddingY $mainNavPaddingX;
+  overflow:auto;
+  .nav-group {
+    text-align:left;
+    font-size:16px;
+    padding:10px 20px;
+    border-bottom:1px solid $mainNavBorder;
+    .group {
+      color:$mainNavColor;
+    }
+    &.active {
+      //background-color:$mainNavBgHL;
+    }
+  }
+  .nav-item {
+    text-align:left;
+    font-size:14px;
+    padding:5px 0 5px 20px;
+    .item {
+      color:$mainNavColor;
+    }
+  }
+}

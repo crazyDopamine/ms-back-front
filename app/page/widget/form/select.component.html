@@ -1,0 +1,10 @@
+<div class="st-select display-inline-block">
+    <input type="text" [(ngModel)]="text" (click)="show = !show">
+    <a class="st-select-clear" *ngIf="value" (click)="clear()">&times;</a>
+    <div class="st-select-mask" *ngIf="show" (click)="show = false"></div>
+    <ul class="st-select-selections-container" *ngIf="show">
+        <li *ngFor="let item of items" class="st-select-selection">
+            <a class="btn" (click)="itemClick(item)">{{item.name}}</a>
+        </li>
+    </ul>
+</div>

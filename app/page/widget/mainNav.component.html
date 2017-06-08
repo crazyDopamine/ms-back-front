@@ -1,0 +1,12 @@
+<nav class="main-nav">
+    <ol>
+        <li *ngFor="let data of menu" [class]="'nav-group '+(data.expanded?'active':'')">
+            <a class="group" (click)="data.expanded=!data.expanded">{{data.name}}</a>
+            <ol *ngIf="data.expanded">
+                <li *ngFor="let item of data.children" class="nav-item">
+                    <a [class]="'item '+(item.index==current?'active':'')" [routerLink]="item.url">{{item.name}}</a>
+                </li>
+            </ol>
+        </li>
+    </ol>
+</nav>

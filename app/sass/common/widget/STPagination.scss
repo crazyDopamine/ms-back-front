@@ -1,0 +1,24 @@
+$paginationBtnColor:$defaultTextColor;
+$paginationBtnActiveColor:$redLight;
+$paginationBtnBorderColor:$commonBorder;
+$paginationBtnBorderActiveColor:$redLight;
+$paginationBtnHeight:30px;
+$paginationBtnPaddingX:10px;
+.st-pagination{
+  text-align:center;
+  a{
+    display:inline-block;
+    line-height:$paginationBtnHeight - 2;
+    min-width:$paginationBtnHeight - 2;
+    padding:0 $paginationBtnPaddingX;
+    border:1px solid $paginationBtnBorderColor;
+    color:$paginationBtnColor;
+    &.active{
+      border:1px solid $paginationBtnBorderActiveColor;
+      color:$paginationBtnActiveColor;
+    }
+    &.disabled{
+      cursor:not-allowed;
+    }
+  }
+}

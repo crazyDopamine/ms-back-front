@@ -1,0 +1,10 @@
+$headerPaddingX:20px;
+.top-menu{
+    height: 80px;
+    background-color: $gray;
+    padding:0 $headerPaddingX;
+    line-height:80px;
+    border-bottom:1px solid $silvery;
+    .title{
+    }
+}

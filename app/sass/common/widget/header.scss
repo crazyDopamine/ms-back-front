@@ -1,0 +1,22 @@
+$headerPaddingX:$one*4;
+$headerHeight:$one*16;
+$headerBg:$themeColor;
+$headerborder:$silvery;
+$headerZIndex:$zIndex-page + 1;
+$headerMinWidth:$pageMinWidth;
+.top-menu{
+  position:fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  min-width:$pageMinWidth;
+  z-index:$headerZIndex;
+  height: $headerHeight;
+  background-color: $headerBg;
+  padding:0 $headerPaddingX;
+  line-height:$headerHeight;
+  border-bottom:1px solid $headerborder;
+  .title{
+
+  }
+}
