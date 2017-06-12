@@ -9,7 +9,7 @@ import {GlobalObserver} from '../../interface/globalObserver.interface'
 import {TableService} from '../../service/table.service'
 @Component({
     selector: 'skill-manage',
-    templateUrl:'app/page/msgManage/msgManage.component.html'
+    templateUrl:'dist/page/msgManage/msgManage.component.html'
 })
 export class MsgManageComponent implements GlobalObserver{
     table:TableService<Msg>;

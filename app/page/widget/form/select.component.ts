@@ -5,7 +5,7 @@ import { Component,Input,Output,OnChanges, SimpleChange,EventEmitter} from '@ang
 // import { TemplateRef, ViewContainerRef } from '@angular/core';
 @Component({
     selector: 'STSelect',
-    templateUrl:'app/page/widget/form/select.component.html'
+    templateUrl:'dist/page/widget/form/select.component.html'
 })
 export class STSelectComponent{
     @Input()

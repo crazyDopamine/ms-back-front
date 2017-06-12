@@ -22,14 +22,14 @@ export class FormComponent<T> {
     }
     public setValues(values:Object){
         this.data = values;
-        this.dataBackup = Object.assign({},values);
+        // if(Object.assign)this.dataBackup = Object.assign({},values);
     }
     public getValues():Object{
         return this.data;
     }
     public reset(){
         if(this.dataBackup){
-            this.data = Object.assign({},this.dataBackup);
+            this.data = this.dataBackup;
         }else {
             this.data = {};
         }

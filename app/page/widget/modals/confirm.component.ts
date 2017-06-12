@@ -5,7 +5,7 @@ import { Component,ViewChild } from '@angular/core';
 import { ModalDirective } from 'ng2-bootstrap/modal';
 @Component({
     selector: 'confirm',
-    templateUrl:'app/page/widget/modals/confirm.component.html'
+    templateUrl:'dist/page/widget/modals/confirm.component.html'
 })
 export class ConfirmComponent {
     title:string = '';

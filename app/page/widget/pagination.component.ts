@@ -4,7 +4,7 @@
 import { Component,Input,Output,EventEmitter } from '@angular/core';
 @Component({
     selector: 'st-pagination',
-    templateUrl:'app/page/widget/pagination.component.html'
+    templateUrl:'dist/page/widget/pagination.component.html'
 })
 export class PaginationComponent {
     private list:Array<number> = [];

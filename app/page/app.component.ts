@@ -12,7 +12,7 @@ import {CookieService} from 'angular2-cookie/core';
 import { LocalStorage } from '../service/localStorage.service'
 @Component({
     selector: 'main-app',
-    templateUrl:'/app/page/app.component.html'
+    templateUrl:'dist/page/app.component.html'
 })
 export class AppComponent{
     @ViewChild(ConfirmComponent)

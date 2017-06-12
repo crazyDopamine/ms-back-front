@@ -11,7 +11,7 @@ import {GlobalService} from '../service/global.service';
 // import {handleError} from "typings/dist/support/cli";
 
 export class BaseApi{
-    protected baseUrl = "http://116.62.23.38:3000/";
+    protected baseUrl = window['baseUrl'];
     constructor(protected http: Http,protected cookieService:CookieService,protected global:GlobalService) {
     }
 
@@ -129,6 +129,16 @@ export class DictionaryApiService extends CommonApi<Dictionary> implements Commo
     }
 }
 
+@Injectable()
+export class FileApiService extends BaseApi{
+    constructor(http: Http,cookieService:CookieService,global:GlobalService) {
+        super(http,cookieService,global);
+    }
+    public upload(file:Object):Observable<Object> {
+        let params = this.tp({file:file});
+        return this.extractData<Object>(this.http.post(this.baseUrl+'file/editorUpload',params,this.commonRequestOptions()));
+    }
+}
 // @Injectable()
 // export class FileUploadApiService extends BaseApi{
 //     constructor(http: Http,cookieService:CookieService,global:GlobalService) {

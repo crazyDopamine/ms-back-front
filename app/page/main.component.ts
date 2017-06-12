@@ -8,7 +8,7 @@ import {GlobalObserver} from '../interface/globalObserver.interface'
 import {TableService} from '../service/table.service'
 @Component({
     selector: 'main-area',
-    templateUrl:'app/page/main.component.html'
+    templateUrl:'dist/page/main.component.html'
 })
 export class MainComponent implements GlobalObserver{
     table:TableService<User>;

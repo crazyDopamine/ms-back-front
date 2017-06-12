@@ -13,6 +13,19 @@
             </div>
             <div class="form-row">
                 <div class="col-8">
+                    <md-input-container>
+                        <input mdInput type="text" placeholder="描述" [(ngModel)]="data.description">
+                    </md-input-container>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-4">图片</div>
+                <div class="col-4">
+                    <input type="file" ng2FileSelect [uploader]="uploader" (change)="upload($event)">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-8">
                     <md-select placeholder="类型" [(ngModel)]="data.type">
                         <md-option *ngFor="let type of types" [value]="type.id">
                             {{type.name}}

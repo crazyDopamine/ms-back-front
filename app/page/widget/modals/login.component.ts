@@ -7,7 +7,7 @@ import { GlobalService } from '../../../service/global.service';
 import { LocalStorage } from '../../../service/localStorage.service';
 @Component({
     selector: 'st-login-modal',
-    templateUrl:'app/page/widget/modals/login.component.html'
+    templateUrl:'dist/page/widget/modals/login.component.html'
 })
 export class LoginComponent {
     private isShow:boolean=false;

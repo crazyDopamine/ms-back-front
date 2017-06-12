@@ -4,7 +4,7 @@
 import { Component } from '@angular/core';
 @Component({
     selector: 'main-footer',
-    templateUrl:'app/page/widget/footer.component.html'
+    templateUrl:'dist/page/widget/footer.component.html'
 })
 export class FooterComponent {
 

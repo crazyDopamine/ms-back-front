@@ -8,8 +8,10 @@ export class User {
 export class Msg {
     id: number;
     title:string;
+    description:string;
     type: number;
     content:string;
+    photo:string;
 }
 
 export class Dictionary {

@@ -23,6 +23,7 @@ module.exports = {
     },
     module: {
         loaders: [
+            {test: /\.html$/,loader:'html-loader'},
             {test: /\.ts$/,loader: 'awesome-typescript-loader'},
             {test:/\.scss$/,loader:ExtractTextPlugin.extract({fallback:'style-loader',use:'css-loader!sass-loader'})},
             {test:/\.css$/,loader:ExtractTextPlugin.extract({fallback:'style-loader',use:'css-loader'})},
@@ -63,6 +64,10 @@ module.exports = {
             {
                 from: __dirname + '/node_modules/font-awesome/fonts',
                 to: 'assets/fonts'
+            },
+            {
+                from: __dirname + '/page',
+                to: 'page'
             }
         ]),
         // new webpack.optimize.UglifyJsPlugin({
@@ -80,6 +85,6 @@ module.exports = {
         historyApiFallback: true,
         hot: true,
         inline: true,
-        port: 8082 // 修改端口，一般默认是8080
+        port: 8086 // 修改端口，一般默认是8080
     }
 };

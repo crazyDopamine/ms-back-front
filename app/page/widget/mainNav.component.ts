@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
 import { GlobalService } from '../../service/global.service'
 @Component({
     selector: 'main-nav',
-    templateUrl:'app/page/widget/mainNav.component.html'
+    templateUrl:'dist/page/widget/mainNav.component.html'
 })
 export class MainNavComponent{
     constructor(private global:GlobalService){

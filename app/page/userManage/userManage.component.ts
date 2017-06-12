@@ -10,7 +10,7 @@ import {TableService} from '../../service/table.service'
 import { TableOptions } from '../../service/tableOptions'
 @Component({
     selector: 'user-manage',
-    templateUrl:'app/page/userManage/userManage.component.html'
+    templateUrl:'dist/page/userManage/userManage.component.html'
 })
 export class UserManageComponent implements GlobalObserver{
     table:TableService<User>;

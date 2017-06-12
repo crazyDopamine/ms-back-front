@@ -4,6 +4,8 @@ import { FormsModule }   from '@angular/forms';
 import { FroalaEditorModule, FroalaViewModule } from 'angular2-froala-wysiwyg';
 // import { NoopAnimationPlayer } from '@angular/animations';
 import { MaterialModule } from '@angular/material';
+import { FileUploadModule } from 'ng2-file-upload';
+
 //component
 import { AppComponent }  from './page/app.component';
 import { HeaderComponent }  from './page/widget/header.component';
@@ -25,7 +27,7 @@ import { MsgFormComponent }  from './page/msgManage/msgForm.component';
 import { RouterModule, Routes } from '@angular/router';
 import { Location } from '@angular/common';
 //webapi
-import { UserApiService,MsgApiService,DictionaryApiService} from './service/webApi.service';
+import { UserApiService,MsgApiService,DictionaryApiService,FileApiService} from './service/webApi.service';
 //local service
 import { GlobalService } from './service/global.service';
 //service
@@ -50,7 +52,7 @@ const appRoutes : Routes = [
 
 @NgModule({
     imports:[BrowserModule,RouterModule.forRoot(appRoutes),HttpModule,FormsModule,FroalaEditorModule.forRoot(), FroalaViewModule.forRoot(),
-        MaterialModule],
+        MaterialModule,FileUploadModule],
     declarations:[AppComponent,HeaderComponent,MainComponent,MainNavComponent,MsgManageComponent,MsgFormComponent,UserFormComponent,
         UserManageComponent,ConfirmComponent,STSelectComponent,PaginationComponent,LoginComponent,SelectionPipe],
     providers:[GlobalService,UserApiService,MsgApiService,DictionaryApiService,Location,CookieService,LocalStorage,SelectionsService],

@@ -12,7 +12,7 @@ import { SelectionsService } from '../../service/selections.service';
 import { GlobalObserver } from '../../interface/globalObserver.interface'
 @Component({
     selector: 'user-form',
-    templateUrl:'app/page/userManage/userForm.component.html'
+    templateUrl:'dist/page/userManage/userForm.component.html'
 })
 export class UserFormComponent extends FormComponent<User> implements GlobalObserver{
     private types : Dictionary[] = new Array<Dictionary>();
@@ -21,7 +21,7 @@ export class UserFormComponent extends FormComponent<User> implements GlobalObse
     constructor(private global:GlobalService,protected api : UserApiService,private route: ActivatedRoute,protected location:Location,
     private dictionaryApi:DictionaryApiService,private selections:SelectionsService){
         super(api,location);
-        this.editorOptions = Object.assign({},this.global.defaultEditorOptions,this.editorOptions);
+        this.editorOptions = global.mix({},this.global.defaultEditorOptions,this.editorOptions);
     }
     ngOnInit(){
         this.data = {};

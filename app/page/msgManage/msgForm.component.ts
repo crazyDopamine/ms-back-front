@@ -5,14 +5,15 @@ import { Component,ViewChild } from '@angular/core';
 import { ActivatedRoute,  } from '@angular/router';
 import { Location } from '@angular/common';
 import { FormComponent } from '../widget/form.component';
-import { MsgApiService,DictionaryApiService } from '../../service/webApi.service';
+import { MsgApiService,DictionaryApiService,FileApiService } from '../../service/webApi.service';
 import { Msg,Dictionary } from '../../model/models'
 import { GlobalService } from '../../service/global.service';
 import { SelectionsService } from '../../service/selections.service';
 import { GlobalObserver } from '../../interface/globalObserver.interface'
+import { FileUploader } from "ng2-file-upload";
 @Component({
     selector: 'msg-form',
-    templateUrl:'app/page/msgManage/msgForm.component.html'
+    templateUrl:'dist/page/msgManage/msgForm.component.html'
 })
 export class MsgFormComponent extends FormComponent<Msg> implements GlobalObserver{
     private types : Dictionary[] = new Array<Dictionary>();
@@ -21,8 +22,13 @@ export class MsgFormComponent extends FormComponent<Msg> implements GlobalObserv
     constructor(private global:GlobalService,protected api : MsgApiService,private route: ActivatedRoute,protected location:Location,
     private dictionaryApi:DictionaryApiService,private selections:SelectionsService){
         super(api,location);
-        this.editorOptions = Object.assign({},this.global.defaultEditorOptions,this.editorOptions);
+        this.editorOptions = global.mix({},this.global.defaultEditorOptions,this.editorOptions);
     }
+    public uploader:FileUploader = new FileUploader({
+        url: "http://localhost:3000/file/editorUpload",
+        method: "POST",
+        itemAlias: "file"
+    });
     ngOnInit(){
         this.data = {};
         this.global.register(this);
@@ -51,6 +57,24 @@ export class MsgFormComponent extends FormComponent<Msg> implements GlobalObserv
     submit(){
         super.submit();
     }
+    upload(event:Object){
+        console.log(event['target'].value);
+        var self = this;
+        this.uploader.queue[0].onSuccess = function (response, status, headers) {
+            // 上传文件成功
+            if (status == 200) {
+                // 上传文件后获取服务器返回的数据
+                let res = JSON.parse(response);
+                console.log(res)
+                self.data['photo'] = res.link;
+            } else {
+                // 上传文件后获取服务器返回的数据错误
+                alert("");
+            }
+        };
+        this.uploader.queue[0].upload(); // 开始上传
+    }
+
     // private showSkillPartModal(part:Object){
     //     if(!part){
     //         part = {
